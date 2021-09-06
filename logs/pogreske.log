@@ -1,0 +1,27 @@
+2021-09-06 16:36:18,638 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 0!$%$%$%
+2021-09-06 16:37:40,794 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:37:41,408 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 14!$%$%$%
+2021-09-06 16:48:20,604 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:48:21,244 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:82] $%$%$% Poduzece records initialized successfully with size of: 5!$%$%$%
+2021-09-06 16:48:41,661 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:98] Article record searched successfully!
+2021-09-06 16:48:44,315 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:98] Article record searched successfully!
+2021-09-06 16:48:48,698 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:98] Article record searched successfully!
+2021-09-06 16:50:49,489 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:50:50,151 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:83] $%$%$% Poduzece records initialized successfully with size of: 5!$%$%$%
+2021-09-06 16:51:04,942 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:126] Poduzece records saved successfully!
+2021-09-06 16:51:09,937 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:99] Article record searched successfully!
+2021-09-06 16:51:17,273 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:51:17,915 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:83] $%$%$% Poduzece records initialized successfully with size of: 5!$%$%$%
+2021-09-06 16:51:49,870 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:126] Poduzece records saved successfully!
+2021-09-06 16:52:01,347 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:52:01,996 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:83] $%$%$% Poduzece records initialized successfully with size of: 5!$%$%$%
+2021-09-06 16:54:26,886 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:54:27,525 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:83] $%$%$% Poduzece records initialized successfully with size of: 5!$%$%$%
+2021-09-06 16:54:39,834 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:127] Poduzece records saved successfully!
+2021-09-06 16:54:47,641 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:54:48,279 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:83] $%$%$% Poduzece records initialized successfully with size of: 6!$%$%$%
+2021-09-06 16:55:50,477 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:55:51,658 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 14!$%$%$%
+2021-09-06 16:56:32,750 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:104] Article record searched successfully!
+2021-09-06 16:56:40,719 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-06 16:56:41,343 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 15!$%$%$%
