@@ -6,25 +6,22 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.java.application.Main;
-import main.java.db.Msdb;
+import main.java.db.PoduzeceCRUD;
 import main.java.model.Entitet;
 import main.java.model.Poduzece;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.OptionalLong;
 import java.util.stream.Collectors;
 
 public class PoduzeceController {
+
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private static final String PODUZECE_EXCEPTION_MESSAGE = "Ups, something went wrong with: ";
 
-    private final Msdb poduzeceRepo = new Msdb();
+    private final PoduzeceCRUD poduzeceCRUD = new PoduzeceCRUD();
 
     @FXML
     private ComboBox<Long> comboBoxID;
@@ -56,7 +53,7 @@ public class PoduzeceController {
     public void initialize() {
 
         try {
-            poduzeceObservableList = FXCollections.observableList(poduzeceRepo.getPoduzece());
+            poduzeceObservableList = FXCollections.observableList(poduzeceCRUD.get());
         } catch (Exception ex) {
             logger.error(PODUZECE_EXCEPTION_MESSAGE + " Artikl controller!", ex);
             ex.printStackTrace();
@@ -114,7 +111,7 @@ public class PoduzeceController {
         } else {
             Poduzece novoPoduzece = new Poduzece(nextId(), naziv, oib);
             try {
-                poduzeceRepo.createPoduzece(novoPoduzece);
+                poduzeceCRUD.create(novoPoduzece);
                 poduzeceObservableList.add(novoPoduzece);
                 textFieldNaziv.clear();
                 textFieldOIB.clear();
@@ -129,8 +126,7 @@ public class PoduzeceController {
     }
 
     private Long nextId() {
-        OptionalLong nextId = poduzeceObservableList.stream().mapToLong(Entitet::getId).max();
-        return nextId.getAsLong() + 1;
+        return poduzeceObservableList.stream().mapToLong(Entitet::getId).max().getAsLong() + 1;
     }
 
     private String unosProvjera(String naziv, String oib) {

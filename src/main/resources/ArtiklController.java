@@ -6,13 +6,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.java.application.Main;
-import main.java.db.Msdb;
+import main.java.db.ArtiklCRUD;
 import main.java.model.Artikl;
 import main.java.model.Entitet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalLong;
@@ -21,7 +23,7 @@ public class ArtiklController {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private static final String ARTIKL_EXCEPTION_MESSAGE = "Ups, something went wrong with: ";
 
-    private final Msdb msdbRepo = new Msdb();
+    private final ArtiklCRUD artiklCRUD = new ArtiklCRUD();
 
     @FXML
     private TextField textFieldNaziv;
@@ -57,7 +59,7 @@ public class ArtiklController {
     public void initialize() {
 
         try {
-            artiklObservableList = FXCollections.observableList(msdbRepo.getArtikl());
+            artiklObservableList = FXCollections.observableList(artiklCRUD.get());
         } catch (Exception ex) {
             logger.error(ARTIKL_EXCEPTION_MESSAGE + " Artikl controller!", ex);
             ex.printStackTrace();
@@ -104,7 +106,7 @@ public class ArtiklController {
         logger.info("Article record searched successfully!");
     }
 
-    public void unos() {
+    public void unos() throws SQLException, IOException {
 
         String naziv = textFieldNaziv.getText();
         String kolicina = textFieldKolicina.getText();
@@ -122,7 +124,7 @@ public class ArtiklController {
             alertWindow.showAndWait();
         } else {
             Artikl noviArtikl = new Artikl(nextId(), naziv, kolicinaCastFromString, CijenaCastFromString, jmj);
-            msdbRepo.createArtikl(noviArtikl);
+            artiklCRUD.create(noviArtikl);
             artiklObservableList.add(noviArtikl);
             textFieldNaziv.clear();
             textFieldCijena.clear();

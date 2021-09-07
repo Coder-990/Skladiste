@@ -15,7 +15,7 @@ public class Main extends Application {
 
         Parent root =  FXMLLoader.load(Optional.ofNullable(getClass()
                 .getClassLoader()
-                .getResource("ArtiklView.fxml")).get());
+                .getResource("PoduzeceView.fxml")).get());
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(String.valueOf(Main.class.getClassLoader().getResource("application.css")));

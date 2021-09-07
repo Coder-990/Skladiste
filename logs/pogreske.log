@@ -25,3 +25,77 @@
 2021-09-06 16:56:32,750 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:104] Article record searched successfully!
 2021-09-06 16:56:40,719 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
 2021-09-06 16:56:41,343 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 15!$%$%$%
+2021-09-07 17:24:58,642 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-07 17:24:59,269 ERROR [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:62] Ups, something went wrong with:  Artikl controller!
+net.ucanaccess.jdbc.UcanaccessSQLException: UCAExc:::5.0.0 connection exception: closed
+	at net.ucanaccess.jdbc.UcanaccessStatement.executeQuery(UcanaccessStatement.java:218)
+	at main.java.db.DatabaseConnections.izvrsiUpit(Msdb.java:33)
+	at main.java.db.DatabaseConnections.getArtikl(Msdb.java:40)
+	at main.resources.ArtiklController.initialize(ArtiklController.java:60)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2591)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2466)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3237)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3194)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3163)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3136)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3113)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3106)
+	at main.java.application.Main.start(Main.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:846)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatementBase.checkClosed(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.getConnection(Unknown Source)
+	at net.ucanaccess.jdbc.UcanaccessStatement.checkLastModified(UcanaccessStatement.java:142)
+	at net.ucanaccess.jdbc.UcanaccessStatement.executeQuery(UcanaccessStatement.java:213)
+	... 31 common frames omitted
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	... 36 common frames omitted
+2021-09-07 17:25:39,968 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-07 17:25:40,599 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 15!$%$%$%
+2021-09-07 17:26:53,239 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-07 17:26:53,894 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:85] $%$%$% Article records initialized successfully with size of: 15!$%$%$%
+2021-09-07 23:53:10,587 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-07 23:53:11,229 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:87] $%$%$% Article records initialized successfully with size of: 15!$%$%$%
+2021-09-07 23:53:28,504 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-07 23:53:34,317 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-07 23:53:44,245 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-07 23:53:48,052 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-07 23:54:27,575 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-07 23:54:39,812 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-07 23:54:40,453 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:87] $%$%$% Article records initialized successfully with size of: 16!$%$%$%
+2021-09-08 00:18:53,940 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-08 00:18:54,588 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:87] $%$%$% Article records initialized successfully with size of: 16!$%$%$%
+2021-09-08 00:19:02,532 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-08 00:19:09,849 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-08 00:19:21,087 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-08 00:19:36,317 INFO [JavaFX Application Thread] m.j.a.Main [ArtiklController.java:106] Article record searched successfully!
+2021-09-08 00:20:35,189 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-08 00:20:35,836 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:82] $%$%$% Poduzece records initialized successfully with size of: 6!$%$%$%
+2021-09-08 00:20:42,390 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:98] Article record searched successfully!
+2021-09-08 00:20:56,656 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:126] Poduzece records saved successfully!
+2021-09-08 00:21:01,106 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:98] Article record searched successfully!
+2021-09-08 00:21:07,646 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-08 00:21:08,301 INFO [JavaFX Application Thread] m.j.a.Main [PoduzeceController.java:82] $%$%$% Poduzece records initialized successfully with size of: 7!$%$%$%
