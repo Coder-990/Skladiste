@@ -59,7 +59,7 @@ public class ArtiklController {
     public void initialize() {
 
         try {
-            artiklObservableList = FXCollections.observableList(artiklCRUD.getArtikl());
+            artiklObservableList = FXCollections.observableList(artiklCRUD.get());
         } catch (Exception ex) {
             logger.error(ARTIKL_EXCEPTION_MESSAGE + " Artikl controller!", ex);
             ex.printStackTrace();
@@ -124,7 +124,7 @@ public class ArtiklController {
             alertWindow.showAndWait();
         } else {
             Artikl noviArtikl = new Artikl(nextId(), naziv, kolicinaCastFromString, CijenaCastFromString, jmj);
-            artiklCRUD.createArtikl(noviArtikl);
+            artiklCRUD.create(noviArtikl);
             artiklObservableList.add(noviArtikl);
             textFieldNaziv.clear();
             textFieldCijena.clear();

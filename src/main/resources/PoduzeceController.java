@@ -55,19 +55,19 @@ public class PoduzeceController {
         try {
             poduzeceObservableList = FXCollections.observableList(poduzeceCRUD.get());
         } catch (Exception ex) {
-            logger.error(PODUZECE_EXCEPTION_MESSAGE + " Artikl controller!", ex);
+            logger.error(PODUZECE_EXCEPTION_MESSAGE + " Poduzece controller!", ex);
             ex.printStackTrace();
         }
 
         System.out.println("$%$%$% Poduzece records initializing! $%$%$%");
 
-        tableColumnId.setCellValueFactory(new PropertyValueFactory<Entitet, Long>("id"));
+        tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tableColumnId.setStyle("-fx-alignment: CENTER");
 
-        tableColumnNaziv.setCellValueFactory(new PropertyValueFactory<Poduzece, String>("naziv"));
+        tableColumnNaziv.setCellValueFactory(new PropertyValueFactory<>("naziv"));
         tableColumnNaziv.setStyle("-fx-alignment: CENTER");
 
-        tableColumnOIB.setCellValueFactory(new PropertyValueFactory<Poduzece, String>("oib"));
+        tableColumnOIB.setCellValueFactory(new PropertyValueFactory<>("oib"));
         tableColumnOIB.setStyle("-fx-alignment: CENTER");
 
         listaPoduzecaID = poduzeceObservableList.stream().map(Entitet::getId).collect(Collectors.toList());

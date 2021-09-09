@@ -21,13 +21,6 @@ public class DatabaseConnections {
         return con.prepareStatement(upit);
     }
 
-//    public String getPoduzceByName(String nazivPoduzeca) throws SQLException, IOException {
-//        Poduzece poduzece = new Poduzece(null, nazivPoduzeca, null);
-//        List<String> listaNazivaPoduzeca = Collections.singletonList(getPoduzece().get(0).getNaziv());
-//        return listaNazivaPoduzeca.get(1);
-//
-//    }
-
 //    public List<Izdatnica> getIzdatnicu() {
 //
 //        List<Izdatnica> listaIzdatnica = new ArrayList<>();

@@ -1,5 +1,6 @@
 package main.java.db;
 
+import main.java.model.Entitet;
 import main.java.model.Poduzece;
 
 import java.io.IOException;
@@ -33,4 +34,11 @@ public class PoduzeceCRUD {
         return listaPoduzeca;
     }
 
+    public Poduzece getPoduzceByName(String nazivPoduzeca) throws SQLException, IOException {
+        return new Poduzece(null, nazivPoduzeca, null);
+    }
+
+    public Poduzece getPoduzeceById(Long id){
+        return new Poduzece(id, null,null);
+    }
 }

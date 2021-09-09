@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.java.application.Main;
-import main.java.db.DatabaseConnections;
 import main.java.db.PoduzeceCRUD;
 import main.java.model.Entitet;
 import main.java.model.Poduzece;
@@ -15,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.OptionalLong;
 import java.util.stream.Collectors;
 
 public class PoduzeceController {
@@ -55,21 +53,21 @@ public class PoduzeceController {
     public void initialize() {
 
         try {
-            poduzeceObservableList = FXCollections.observableList(poduzeceCRUD.getPoduzece());
+            poduzeceObservableList = FXCollections.observableList(poduzeceCRUD.get());
         } catch (Exception ex) {
-            logger.error(PODUZECE_EXCEPTION_MESSAGE + " Artikl controller!", ex);
+            logger.error(PODUZECE_EXCEPTION_MESSAGE + " Poduzece controller!", ex);
             ex.printStackTrace();
         }
 
         System.out.println("$%$%$% Poduzece records initializing! $%$%$%");
 
-        tableColumnId.setCellValueFactory(new PropertyValueFactory<Entitet, Long>("id"));
+        tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tableColumnId.setStyle("-fx-alignment: CENTER");
 
-        tableColumnNaziv.setCellValueFactory(new PropertyValueFactory<Poduzece, String>("naziv"));
+        tableColumnNaziv.setCellValueFactory(new PropertyValueFactory<>("naziv"));
         tableColumnNaziv.setStyle("-fx-alignment: CENTER");
 
-        tableColumnOIB.setCellValueFactory(new PropertyValueFactory<Poduzece, String>("oib"));
+        tableColumnOIB.setCellValueFactory(new PropertyValueFactory<>("oib"));
         tableColumnOIB.setStyle("-fx-alignment: CENTER");
 
         listaPoduzecaID = poduzeceObservableList.stream().map(Entitet::getId).collect(Collectors.toList());
@@ -113,7 +111,7 @@ public class PoduzeceController {
         } else {
             Poduzece novoPoduzece = new Poduzece(nextId(), naziv, oib);
             try {
-                poduzeceCRUD.createPoduzece(novoPoduzece);
+                poduzeceCRUD.create(novoPoduzece);
                 poduzeceObservableList.add(novoPoduzece);
                 textFieldNaziv.clear();
                 textFieldOIB.clear();
