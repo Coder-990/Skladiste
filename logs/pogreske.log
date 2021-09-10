@@ -153,3 +153,146 @@ Caused by: org.hsqldb.HsqlException: connection exception: closed
 2021-09-09 17:35:18,484 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:102] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
 2021-09-09 17:35:42,263 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
 2021-09-09 17:35:42,907 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:102] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-09 23:30:10,972 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-09 23:30:11,613 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:102] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-09 23:31:05,643 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-09 23:31:06,314 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:102] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-09 23:46:11,877 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-09 23:46:12,544 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-09 23:46:40,405 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-09 23:46:41,033 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-09 23:47:37,533 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-09 23:47:38,173 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-09 23:52:34,962 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-09 23:52:35,611 ERROR [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:68] Ups, something went wrong with:  Izdatnica controller!
+net.ucanaccess.jdbc.UcanaccessSQLException: UCAExc:::5.0.0 invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getString(UcanaccessResultSet.java:782)
+	at main.java.db.IzdatnicaCRUD.get(IzdatnicaCRUD.java:32)
+	at main.resources.IzdatnicaController.initialize(IzdatnicaController.java:65)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2591)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2466)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3237)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3194)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3163)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3136)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3113)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3106)
+	at main.java.application.Main.start(Main.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:846)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: net.ucanaccess.jdbc.UcanaccessSQLException: UCAExc:::5.0.0 invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getObject(UcanaccessResultSet.java:649)
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getString(UcanaccessResultSet.java:776)
+	... 30 common frames omitted
+Caused by: java.sql.SQLException: invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getCurrent(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getColumnValue(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getColumnInType(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getObject(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getObject(Unknown Source)
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getObject(UcanaccessResultSet.java:643)
+	... 31 common frames omitted
+Caused by: org.hsqldb.HsqlException: invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	... 38 common frames omitted
+2021-09-10 00:08:31,096 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 00:08:31,735 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-10 14:57:14,444 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 14:57:15,061 ERROR [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:68] Ups, something went wrong with:  Izdatnica controller!
+net.ucanaccess.jdbc.UcanaccessSQLException: UCAExc:::5.0.0 invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getString(UcanaccessResultSet.java:782)
+	at main.java.db.IzdatnicaCRUD.dohvacanjePodatakaIzBaze(IzdatnicaCRUD.java:65)
+	at main.java.db.IzdatnicaCRUD.get(IzdatnicaCRUD.java:47)
+	at main.resources.IzdatnicaController.initialize(IzdatnicaController.java:65)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2591)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2466)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3237)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3194)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3163)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3136)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3113)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3106)
+	at main.java.application.Main.start(Main.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:846)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: net.ucanaccess.jdbc.UcanaccessSQLException: UCAExc:::5.0.0 invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getObject(UcanaccessResultSet.java:649)
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getString(UcanaccessResultSet.java:776)
+	... 31 common frames omitted
+Caused by: java.sql.SQLException: invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getCurrent(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getColumnValue(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getColumnInType(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getObject(Unknown Source)
+	at org.hsqldb.jdbc.JDBCResultSet.getObject(Unknown Source)
+	at net.ucanaccess.jdbc.UcanaccessResultSet.getObject(UcanaccessResultSet.java:643)
+	... 32 common frames omitted
+Caused by: org.hsqldb.HsqlException: invalid cursor state: identifier cursor not positioned on row in UPDATE, DELETE, SET, or GET statement: ; ResultSet is positioned before first row
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	... 39 common frames omitted
+2021-09-10 14:59:27,990 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 14:59:28,638 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-10 15:00:17,511 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:00:33,122 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:00:34,539 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:00:37,601 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:01:02,239 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:01:28,825 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 15:01:29,460 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-10 15:01:38,980 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:02:01,111 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:02:13,525 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:02:16,557 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:02:19,139 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:02:22,516 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:122] Izdatnica record searched successfully!
+2021-09-10 15:02:43,272 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 15:02:43,914 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:103] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-10 15:08:08,180 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 15:08:08,841 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:101] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-10 15:11:21,979 DEBUG [JavaFX Application Thread] c.h.j.i.DatabaseImpl [DatabaseImpl.java:1001] Finished reading system catalog.  Tables: [Firme, Izdatnica, Primka, Roba, StavkaIzdatnice, StavkaPrimke, StornoIzdatnice, StornoPrimke] (Db=DBSKLADISTE10.mdb)
+2021-09-10 15:11:22,700 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:101] $%$%$% Izdatnica records initialized successfully with size of: 1!$%$%$%
+2021-09-10 15:11:34,667 INFO [JavaFX Application Thread] m.j.a.Main [IzdatnicaController.java:120] Izdatnica record searched successfully!

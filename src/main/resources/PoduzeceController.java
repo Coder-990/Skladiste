@@ -47,8 +47,6 @@ public class PoduzeceController {
     private Button buttonObrisi;
 
     private ObservableList<Poduzece> poduzeceObservableList;
-    private List<Long> listaPoduzecaID;
-    private ObservableList<Long> obListPoduzeceID;
 
     public void initialize() {
 
@@ -70,8 +68,8 @@ public class PoduzeceController {
         tableColumnOIB.setCellValueFactory(new PropertyValueFactory<>("oib"));
         tableColumnOIB.setStyle("-fx-alignment: CENTER");
 
-        listaPoduzecaID = poduzeceObservableList.stream().map(Entitet::getId).collect(Collectors.toList());
-        obListPoduzeceID = FXCollections.observableList(listaPoduzecaID);
+        List<Long> listaPoduzecaID = poduzeceObservableList.stream().map(Entitet::getId).collect(Collectors.toList());
+        ObservableList<Long> obListPoduzeceID = FXCollections.observableList(listaPoduzecaID);
         comboBoxID.setItems(obListPoduzeceID);
         comboBoxID.getSelectionModel().selectFirst();
 
@@ -112,14 +110,14 @@ public class PoduzeceController {
             Poduzece novoPoduzece = new Poduzece(nextId(), naziv, oib);
             try {
                 poduzeceCRUD.create(novoPoduzece);
-                poduzeceObservableList.add(novoPoduzece);
-                textFieldNaziv.clear();
-                textFieldOIB.clear();
             } catch (Exception ex) {
                 System.err.println("Error in method 'unesi poduzece'" + ex);
                 ex.printStackTrace();
             }
+            poduzeceObservableList.add(novoPoduzece);
             tableView.setItems(poduzeceObservableList);
+            textFieldNaziv.clear();
+            textFieldOIB.clear();
             System.out.println("Poduzece records saved successfully!");
             logger.info("Poduzece records saved successfully!");
         }

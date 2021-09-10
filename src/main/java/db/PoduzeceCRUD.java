@@ -1,29 +1,69 @@
 package main.java.db;
 
-import main.java.model.Entitet;
+import main.java.application.Main;
+import main.java.iznimke.IznimkaSlanjePodatakaPremaBazi;
+import main.java.iznimke.IznimkuDohvacanjaPodatakaIzBaze;
 import main.java.model.Poduzece;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PoduzeceCRUD {
 
-    DatabaseConnections dbConnections = new DatabaseConnections();
-    List<Poduzece> listaPoduzeca = new ArrayList<>();
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final String IZNIMKA_BAZE_PODATAKA = "Nešto je pošlo po zlu, objašnjenje slijedi u iznimci:\n";
+    private final List<Poduzece> listaPoduzeca = new ArrayList<>();
+
+    Database bazaRepozitorij = new Database();
 
     public void create(Poduzece poduzece) throws IOException, SQLException {
-        PreparedStatement ps = dbConnections.preparedStatementExecuteUpdate("INSERT INTO Firme(OIBFirme, NazivFirme) VALUES (?, ?)");
+        PreparedStatement ps = bazaRepozitorij.izvrsiAzuriranjePoQueryu(
+                "INSERT INTO Firme(OIBFirme, NazivFirme) VALUES (?, ?)");
+        try (ps) {
+            slanjaPodatakaPremaBazi(poduzece, ps);
+        } catch (IznimkaSlanjePodatakaPremaBazi iznimka) {
+            logger.error(IZNIMKA_BAZE_PODATAKA + " " + iznimka);
+            System.err.println(Arrays.toString(iznimka.getStackTrace()));
+        }
+    }
+
+    public List<Poduzece> get() throws SQLException, IOException {
+        ResultSet rs = bazaRepozitorij.izvrsiUpitPoQueryu("SELECT * FROM Firme WHERE 1 = 1");
+        try (rs) {
+            dohvacanjePodatakaIzBaze(rs);
+        } catch (IznimkuDohvacanjaPodatakaIzBaze iznimka) {
+            logger.error(IZNIMKA_BAZE_PODATAKA + " " + iznimka);
+            System.err.println(Arrays.toString(iznimka.getStackTrace()));
+        }
+        return listaPoduzeca;
+    }
+
+    public void update(Long id) {
+
+    }
+
+    public void delete(Long id) {
+
+    }
+
+    Poduzece getPoduzeceById(Long id) {
+        return new Poduzece(id, "", "");
+    }
+
+    private void slanjaPodatakaPremaBazi(Poduzece poduzece, PreparedStatement ps) throws SQLException {
         ps.setString(1, poduzece.getOib());
         ps.setString(2, poduzece.getNaziv());
         ps.executeUpdate();
     }
 
-    public List<Poduzece> get() throws SQLException, IOException {
-        ResultSet rs = dbConnections.resultSetQueryExecuter("SELECT * FROM Firme WHERE 1 = 1");
+    private void dohvacanjePodatakaIzBaze(ResultSet rs) throws SQLException {
         while (rs.next()) {
             Long id = rs.getLong("IDFirme");
             String naziv = rs.getString("NazivFirme");
@@ -31,14 +71,5 @@ public class PoduzeceCRUD {
             Poduzece novoPoduzece = new Poduzece(id, naziv, oib);
             listaPoduzeca.add(novoPoduzece);
         }
-        return listaPoduzeca;
-    }
-
-    public Poduzece getPoduzceByName(String nazivPoduzeca) throws SQLException, IOException {
-        return new Poduzece(null, nazivPoduzeca, null);
-    }
-
-    public Poduzece getPoduzeceById(Long id){
-        return new Poduzece(id, null,null);
     }
 }

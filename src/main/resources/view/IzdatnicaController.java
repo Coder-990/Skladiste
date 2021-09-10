@@ -1,4 +1,4 @@
-package main.resources;
+package main.resources.view;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,8 +15,6 @@ import main.java.model.Poduzece;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -44,7 +42,7 @@ public class IzdatnicaController {
     @FXML
     private TableColumn<Entitet, Long> tableColumnId;
     @FXML
-    private TableColumn<Entitet, String> tableColumnNazivPoduzeca;
+    private TableColumn<Izdatnica, String> tableColumnNazivPoduzeca;
     @FXML
     private TableColumn<LocalDate, String> tableColumnDatumIzdatnice;
     @FXML
@@ -57,17 +55,19 @@ public class IzdatnicaController {
     private Button buttonObrisi;
 
     private ObservableList<Izdatnica> izdatnicaObservableList;
+    private ObservableList<Poduzece> observableListNazivPoduzeca;
 
-    public void initialize() throws IOException, SQLException {
+    public void initialize() {
 
         try {
             izdatnicaObservableList = FXCollections.observableList(izdatnicaCRUD.get());
+            observableListNazivPoduzeca = FXCollections.observableList(poduzeceCRUD.get());
         } catch (Exception ex) {
-            logger.error(IZDATNICA_EXCEPTION_MESSAGE + " Artikl controller!", ex);
+            logger.error(IZDATNICA_EXCEPTION_MESSAGE + " Izdatnica controller!", ex);
             ex.printStackTrace();
         }
 
-        System.out.println("$%$%$% Poduzece records initializing! $%$%$%");
+        System.out.println("$%$%$% Izdatnica records initializing! $%$%$%");
 
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tableColumnId.setStyle("-fx-alignment: CENTER");
@@ -78,7 +78,6 @@ public class IzdatnicaController {
         tableColumnDatumIzdatnice.setCellValueFactory(new PropertyValueFactory<>("datumIzdatnice"));
         tableColumnDatumIzdatnice.setStyle("-fx-alignment: CENTER");
 
-        ObservableList<Poduzece> observableListNazivPoduzeca = FXCollections.observableList(poduzeceCRUD.get());
         comboBoxNazivPoduzeca.setItems(observableListNazivPoduzeca);
         comboBoxNazivPoduzeca.setCellFactory(new Callback<>() {
             @Override
@@ -167,7 +166,8 @@ public class IzdatnicaController {
     }
 
     public void ponistavanje() {
-//        textFieldNaziv.clear();
-//        textFieldOIB.clear();
+        textFieldNazivPoduzeca.clear();
+        datePickerDatum.setAccessibleText("Odaberite datum");
+        comboBoxNazivPoduzeca.cancelEdit();
     }
 }

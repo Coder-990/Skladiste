@@ -1,7 +1,10 @@
 package main.java.model;
 
 import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import java.io.Serializable;
@@ -20,4 +23,6 @@ public class Poduzece extends Entitet implements Serializable {
         super(id, naziv);
         this.oib = oib;
     }
+
+
 }

@@ -18,6 +18,6 @@ public abstract class Entitet implements Serializable {
     @Id
     private long id;
     @NotNull
-    String naziv;
+    private String naziv;
 
 }
