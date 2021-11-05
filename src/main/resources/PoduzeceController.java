@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.java.application.Main;
 import main.java.db.PoduzeceCRUD;
+import main.java.dto.PoduzeceToDto;
 import main.java.model.Entitet;
 import main.java.model.Poduzece;
 import org.slf4j.Logger;
@@ -32,7 +33,7 @@ public class PoduzeceController {
     @FXML
     private TableView<Poduzece> tableView;
     @FXML
-    private TableColumn<Entitet, Long> tableColumnId;
+    private TableColumn<Poduzece, Long> tableColumnId;
     @FXML
     private TableColumn<Poduzece, String> tableColumnNaziv;
     @FXML
@@ -51,7 +52,7 @@ public class PoduzeceController {
     public void initialize() {
 
         try {
-            poduzeceObservableList = FXCollections.observableList(poduzeceCRUD.get());
+            poduzeceObservableList = FXCollections.observableList(poduzeceCRUD.get().stream().map(PoduzeceToDto::getPoduzece).collect(Collectors.toList()));
         } catch (Exception ex) {
             logger.error(PODUZECE_EXCEPTION_MESSAGE + " Poduzece controller!", ex);
             ex.printStackTrace();
@@ -68,7 +69,7 @@ public class PoduzeceController {
         tableColumnOIB.setCellValueFactory(new PropertyValueFactory<>("oib"));
         tableColumnOIB.setStyle("-fx-alignment: CENTER");
 
-        List<Long> listaPoduzecaID = poduzeceObservableList.stream().map(Entitet::getId).collect(Collectors.toList());
+        List<Long> listaPoduzecaID = poduzeceObservableList.stream().map(Poduzece::getId).collect(Collectors.toList());
         ObservableList<Long> obListPoduzeceID = FXCollections.observableList(listaPoduzecaID);
         comboBoxID.setItems(obListPoduzeceID);
         comboBoxID.getSelectionModel().selectFirst();
@@ -107,14 +108,14 @@ public class PoduzeceController {
             alertWindow.setContentText(alert);
             alertWindow.showAndWait();
         } else {
-            Poduzece novoPoduzece = new Poduzece(nextId(), naziv, oib);
+            PoduzeceToDto novoPoduzece = new PoduzeceToDto(nextId(), naziv, oib);
             try {
                 poduzeceCRUD.create(novoPoduzece);
             } catch (Exception ex) {
                 System.err.println("Error in method 'unesi poduzece'" + ex);
                 ex.printStackTrace();
             }
-            poduzeceObservableList.add(novoPoduzece);
+            poduzeceObservableList.add(novoPoduzece.getPoduzece());
             tableView.setItems(poduzeceObservableList);
             textFieldNaziv.clear();
             textFieldOIB.clear();
