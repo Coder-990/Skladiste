@@ -1,6 +1,7 @@
 package main.java.db;
 
 import main.java.application.Main;
+import main.java.dto.PoduzeceToDto;
 import main.java.iznimke.IznimkaSlanjePodatakaPremaBazi;
 import main.java.iznimke.IznimkuDohvacanjaPodatakaIzBaze;
 import main.java.model.Poduzece;
@@ -23,26 +24,29 @@ public class PoduzeceCRUD {
 
     Database bazaRepozitorij = new Database();
 
-    public void create(Poduzece poduzece) throws IOException, SQLException {
-        PreparedStatement ps = bazaRepozitorij.izvrsiAzuriranjePoQueryu(
-                "INSERT INTO Firme(OIBFirme, NazivFirme) VALUES (?, ?)");
-        try (ps) {
-            slanjaPodatakaPremaBazi(poduzece, ps);
-        } catch (IznimkaSlanjePodatakaPremaBazi iznimka) {
-            logger.error(IZNIMKA_BAZE_PODATAKA + " " + iznimka);
-            System.err.println(Arrays.toString(iznimka.getStackTrace()));
-        }
+    HibernatePoduzece hb = new HibernatePoduzece();
+    public void create(PoduzeceToDto poduzece) throws IOException, SQLException {
+//        PreparedStatement ps = bazaRepozitorij.izvrsiAzuriranjePoQueryu(
+//                "INSERT INTO Firme(OIBFirme, NazivFirme) VALUES (?, ?)");
+//        try (ps) {
+//            slanjaPodatakaPremaBazi(poduzece, ps);
+            hb.create(poduzece);
+//        } catch (IznimkaSlanjePodatakaPremaBazi iznimka) {
+//            logger.error(IZNIMKA_BAZE_PODATAKA + " " + iznimka);
+//            System.err.println(Arrays.toString(iznimka.getStackTrace()));
+//        }
     }
 
-    public List<Poduzece> get() throws SQLException, IOException {
-        ResultSet rs = bazaRepozitorij.izvrsiUpitPoQueryu("SELECT * FROM Firme WHERE 1 = 1");
-        try (rs) {
-            dohvacanjePodatakaIzBaze(rs);
-        } catch (IznimkuDohvacanjaPodatakaIzBaze iznimka) {
-            logger.error(IZNIMKA_BAZE_PODATAKA + " " + iznimka);
-            System.err.println(Arrays.toString(iznimka.getStackTrace()));
-        }
-        return listaPoduzeca;
+    public List<PoduzeceToDto> get() throws SQLException, IOException {
+//        ResultSet rs = bazaRepozitorij.izvrsiUpitPoQueryu("SELECT * FROM Firme WHERE 1 = 1");
+//        try (rs) {
+//            dohvacanjePodatakaIzBaze(rs);
+//        } catch (IznimkuDohvacanjaPodatakaIzBaze iznimka) {
+//            logger.error(IZNIMKA_BAZE_PODATAKA + " " + iznimka);
+//            System.err.println(Arrays.toString(iznimka.getStackTrace()));
+//        }
+        return hb.get();
+//                listaPoduzeca;
     }
 
     public void update(Long id) {

@@ -23,6 +23,7 @@ public class ArtiklCRUD {
     private final List<Artikl> listaArtikla = new ArrayList<>();
 
     Database bazaRepozitorij = new Database();
+    HibernatePoduzece hb = new HibernatePoduzece();
 
     public void create(Artikl artikl) throws SQLException, IOException {
         PreparedStatement ps = bazaRepozitorij.izvrsiAzuriranjePoQueryu(

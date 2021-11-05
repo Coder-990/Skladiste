@@ -30,4 +30,8 @@ public class Artikl extends Entitet{
         this.cijena = cijena;
         this.jedinicnaMjera = jedinicnaMjera;
     }
+
+    public BigDecimal izracunUkupnuVrijednostArtikla(){
+        return ukupnaVrijednost.add(cijena.multiply(BigDecimal.valueOf(kolicina)));
+    }
 }
